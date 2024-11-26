@@ -1,24 +1,25 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import One from "./pages/One";
+import Two from "./pages/Two";
+import Three from "./pages/Three";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<One />}/>
+        <Route path="two" element={<Two />} />
+        <Route path="three" element={<Three />} />
+      {/* {peopleArr.map((personObj, index) => (
+        <PersonCard2 key={index} firstname={personObj.firstname} lastname={personObj.lastname} age={personObj.age} hairColor={personObj.hairColor}
+        />
+      ))} */}
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
